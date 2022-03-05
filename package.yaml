@@ -30,9 +30,6 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-     - colour
-     - data-default-class
-     - lens
      - Chart
      - Chart-cairo
      - MonadRandom
