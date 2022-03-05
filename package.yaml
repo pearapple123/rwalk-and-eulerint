@@ -1,0 +1,49 @@
+name:                rwalk-and-eulerint
+version:             0.1.0.0
+github:              "pearapple123/rwalk-and-eulerint"
+license:             BSD3
+author:              "Pearapple123"
+maintainer:          "example@example.com"
+copyright:           "2022 Pearapple123"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# synopsis:            Short description of your package
+# category:            Web
+
+description:         Please see the README on GitHub at <https://github.com/pearapple123/rwalk-and-eulerint#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  rwalk-and-eulerint-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+     - colour
+     - data-default-class
+     - lens
+     - Chart
+     - Chart-cairo
+     - MonadRandom
+
+tests:
+  rwalk-and-eulerint-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - rwalk-and-eulerint
