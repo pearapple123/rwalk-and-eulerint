@@ -18,11 +18,11 @@ y_0 = 1.0 :: Float
 f t = -t
 
 ts = [tmin,tmin+dt..tmax] -- small error due to using ranges with floats
-ys f = take (length ts) $ iterate (\y_i -> y_i + f y_i * dt) y_0
+ys = take (length ts) $ iterate (\y_i -> y_i + f y_i * dt) y_0
 
 main = toFile def "euler.png" $ do
   layout_title .= "Euler Method"
   let actYs = [exp(-t) | t <- ts]
-  plot (line "Euler Projection" [[(x,y) | (x,y) <- zip ts $ ys f]])
+  plot (line "Euler Projection" [[(x,y) | (x,y) <- zip ts ys]])
   plot (line "Actual Function" [[(x,y) | (x,y) <- zip ts actYs]])
-  plot (line "Ratio" [[(x,y) | (x,y) <- zip ts $ zipWith (/) (ys f) actYs]])
+  plot (line "Ratio" [[(x,y) | (x,y) <- zip ts $ zipWith (/) ys actYs]])
