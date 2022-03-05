@@ -1,7 +1,7 @@
 module Euler where
 
 import Graphics.Rendering.Chart.Easy
-import Graphics.Rendering.Chart.Backend.Cairo
+import Graphics.Rendering.Chart.Backend.Cairo (toFile)
 
 {-
 HOW TO USE:
