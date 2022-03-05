@@ -3,7 +3,7 @@ module RandWalk where
 import Control.Monad.Random.Class
 import Control.Monad (replicateM)
 import Graphics.Rendering.Chart.Easy
-import Graphics.Rendering.Chart.Backend.Cairo
+import Graphics.Rendering.Chart.Backend.Cairo (toFile)
 
 walks :: Int
 walks = 10
